@@ -23,7 +23,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String,Object> model){
+    public String addUser(com.example.todolist.domain.User user, Map<String,Object> model){
         User userFromDB = userRepo.findByUsername(user.getUsername());
         if (userFromDB != null) {
             model.put("message","Пользователь существует!");
